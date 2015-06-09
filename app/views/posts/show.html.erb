@@ -15,12 +15,18 @@
     <strong> Comments (<%= @post.comments.size %>):</strong>
 
     <%= form_for([@post, @comment]) do |f| %>
-      <%= f.text_area :content %>
+      <%= f.text_area :content %> Comment <br>
+      <%= f.text_field :name %> Name <br>
+      <%= f.email_field :email_address %> Email address <br>
       <%= f.submit %>
     <% end %>
 
     <% @post.comments.each do |comment| %>
-    <p><%= comment.content %></p>
+    <p><%= comment.content %> Comments by :
+    <%= comment.name %> Email :
+    <%= comment.email_address %></p>
     <% end %>
   </p>
+
+  <%= link_to 'Home', posts_path %>
 </div>

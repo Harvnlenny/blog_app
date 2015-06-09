@@ -14,12 +14,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.create(post_params)
 
     if @post.save
-      redirect_to @post, notice: 'Post was successfully created.'
+      format.html { redirect_to @post, notice: 'Post was successfully created.' }
     else
-      render :new
+      format.html {render :new }
     end
   end
 

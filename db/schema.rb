@@ -18,9 +18,11 @@ ActiveRecord::Schema.define(version: 20150608181604) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "content"
+    t.string   "email_address"
+    t.string   "name"
     t.integer  "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "posts", force: :cascade do |t|
