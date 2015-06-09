@@ -17,7 +17,7 @@
     <%= form_for([@post, @comment]) do |f| %>
       <%= f.text_area :content %> Comment <br>
       <%= f.text_field :name %> Name <br>
-      <%= f.email_field :email_address %> Email address <br>
+      <%= f.text_field :email_address %> Email address <br>
       <%= f.submit %>
     <% end %>
 
