@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments, :only => [:create]
   end
+  resources :blogs, :only => [:show, :index]
+  
   root "posts#index"
 
   get '/login' => 'sessions#new'
