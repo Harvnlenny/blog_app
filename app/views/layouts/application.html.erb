@@ -1,21 +1,29 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>BlogApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<% if current_user %>
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+  <% if current_user %>
   Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
-<% else %>
+  <% else %>
   <%= link_to 'Login', '/login' %>
-<% end %>
+  <% end %>
+    
+    <div class="row">
+    <%= yield %>
+    </div>
 
-<%= yield %>
-  
-
-</body>
+  </body>
 </html>
+
