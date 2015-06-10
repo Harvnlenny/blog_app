@@ -18,9 +18,9 @@ class PostsController < ApplicationController
     @post = Post.create(post_params)
 
     if @post.save
-      format.html { redirect_to @post, notice: 'Post was successfully created.' }
+      redirect_to @post, notice: 'Post was successfully created.'
     else
-      format.html {render :new }
+      render :new
     end
   end
 
@@ -28,20 +28,16 @@ class PostsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @post.update(params[:post].permit(:title, :body))
-        format.html {redirect_to @post, notice: 'Post was successfully updated.' }
-      else
-        format.html{ render :edit }
-      end
+    if @post.update(params[:post].permit(:title, :body))
+      redirect_to @post, notice: 'Post was successfully updated.'
+    else
+      render :edit
     end
   end
 
   def destroy
     @post.destroy
-    respond_to do |format|
-      format.html {redirect_to posts_path, notice: 'Post was successfully destroyed.' }
-    end
+    redirect_to posts_path, notice: 'Post was successfully destroyed.'
   end
 
   private
