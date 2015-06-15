@@ -3,7 +3,12 @@
 /* Add imports of custom sass/scss files here */
 @import "foundation_and_overrides";
 
-
+#navbar {
+  
+  img.avatar {
+    margin: 8px 0;
+  }  
+}
 
 
 

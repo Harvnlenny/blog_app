@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authorize
+  #before_action :authorize
   def new
   end
 
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 private
 
   def user_params
-    params.require(:user).permit(:name, :email_address, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email_address, :avatar, :password, :password_confirmation)
   end
 
 end

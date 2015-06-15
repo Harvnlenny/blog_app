@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -14,10 +15,27 @@
 
   <body>
 
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+       
+        <a class="navbar-brand" href="<%= root_path %>">Blog App</a>
+      
+      
+        <% unless current_user %>
+        <% else %>
+        
+          <%= link_to image_tag(current_user.avatar, :size => '32x32', :class => 'img-thumbnail navbar-right avatar') %>
+        <% end %>
+      </div><!--/.navbar-collapse -->
+    </div>
+  </nav>
+
   <% if current_user %>
   Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
   <% else %>
-  <%= link_to 'Login', '/login' %>
+  <%= link_to 'Login', '/login' %><br>
+  <%= link_to 'Signup', '/signup' %>
   <% end %>
     
     <div class="row">
