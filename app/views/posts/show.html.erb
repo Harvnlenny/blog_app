@@ -13,7 +13,11 @@
   
   <p class="all_tags">
     # <%= @post.all_tags %>
-  <p>
+  </p>
+
+  <p class="pic">
+    <%= image_tag(@post.pic.url) %>
+  </p>
     <strong> Comments (<%= @post.comments.size %>):</strong>
 
     <%= form_for([@post, @comment]) do |f| %>

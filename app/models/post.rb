@@ -6,7 +6,8 @@ class Post < ActiveRecord::Base
   has_many :tags, :through => :taggings
   validates :title, presence: true
   validates :body, presence: true
-
+  mount_uploader :pic, PicUploader
+  
   def all_tags=(names)
     self.tags = names.split(",").map do |name|
       Tag.where(name: name.strip).first_or_create!

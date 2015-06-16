@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Blog" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -22,11 +22,7 @@
         <a class="navbar-brand" href="<%= root_path %>">Blog App</a>
       
       
-        <% unless current_user %>
-        <% else %>
-        
-          <%= image_tag(current_user.avatar.url, :size => '32x32', :class => 'img-thumbnail navbar-right avatar') %>
-        <% end %>
+       
       </div><!--/.navbar-collapse -->
     </div>
   </nav>

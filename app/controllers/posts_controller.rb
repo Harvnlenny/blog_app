@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @posts = Post.all
     @comment = Comment.new
   end
 
@@ -46,6 +47,6 @@ class PostsController < ApplicationController
   end
   
   def post_params
-    params.require(:post).permit(:title, :body, :all_tags)
+    params.require(:post).permit(:title, :body, :all_tags, :pic)
   end
 end
