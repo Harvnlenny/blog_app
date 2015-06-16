@@ -25,7 +25,7 @@
         <% unless current_user %>
         <% else %>
         
-          <%= link_to image_tag(current_user.avatar, :size => '32x32', :class => 'img-thumbnail navbar-right avatar') %>
+          <%= image_tag(current_user.avatar.url, :size => '32x32', :class => 'img-thumbnail navbar-right avatar') %>
         <% end %>
       </div><!--/.navbar-collapse -->
     </div>
