@@ -20,17 +20,17 @@
   </p>
     <strong> Comments (<%= @post.comments.size %>):</strong>
 
+    <div id="comment_list">
+      <% @post.comments.each do |comment| %>
+        <%= render comment %>
+      <% end %>      
+    </div>
+
     <%= form_for([@post, @comment]) do |f| %>
       Comment <%= f.text_area :content %> Name <br>
       <%= f.text_field :name %> Email address <br>
       <%= f.text_field :email_address %>  <br>
       <%= f.submit %>
-    <% end %>
-
-    <% @post.comments.each do |comment| %>
-    <p><%= comment.content %> Comments by :
-    <%= comment.name %> Email :
-    <%= comment.email_address %></p>
     <% end %>
   </p>
 

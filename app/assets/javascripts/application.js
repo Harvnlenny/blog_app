@@ -16,5 +16,32 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).foundation();
-$(function(){ $(document).foundation(); });
+
+$(function(){
+
+  $(document).foundation();
+
+  $('#new_comment').submit(function(event){
+    console.log('submitted!');
+    event.preventDefault();
+
+    // Do the ajax
+    $.ajax({
+      url: event.target.action + '.json',
+      method: 'POST',
+      data: $(event.target).serialize(),
+      success: function(data) {
+        $('#comment_list').append(data.comment);
+        $("#comment_list .comment:last").hide().slideDown();
+      }, 
+    
+      error: function(e) {
+        console.log("Woops!", e);
+      }
+    });
+      
+  });
+});
+
+
+
