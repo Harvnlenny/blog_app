@@ -1,8 +1,5 @@
 class SessionsController < ApplicationController
 
-  def new
-  end
-
   def create
     user = User.authorize_with(request.env["omniauth.auth"])
     if user 
