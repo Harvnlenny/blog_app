@@ -32,6 +32,7 @@ gem "paperclip", "~> 4.2"
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem 'puma'
+gem 'omniauth-github'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 #gem 'figaro'

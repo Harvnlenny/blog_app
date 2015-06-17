@@ -4,18 +4,18 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_email_address(params[:email_address])
-    if user && user.authenticate(params[:password])
+    user = User.authorize_with(request.env["omniauth.auth"])
+    if user 
       session[:user_id] = user.id
       redirect_to '/posts'
     else
-      redirect_to '/login'
+      redirect_to '/login', :notice => "Fail."
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to '/'
+    redirect_to '/', :notice => "Signed out!"
   end
 
 end

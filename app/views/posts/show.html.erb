@@ -21,9 +21,9 @@
     <strong> Comments (<%= @post.comments.size %>):</strong>
 
     <%= form_for([@post, @comment]) do |f| %>
-      <%= f.text_area :content %> Comment <br>
-      <%= f.text_field :name %> Name <br>
-      <%= f.text_field :email_address %> Email address <br>
+      Comment <%= f.text_area :content %> Name <br>
+      <%= f.text_field :name %> Email address <br>
+      <%= f.text_field :email_address %>  <br>
       <%= f.submit %>
     <% end %>
 
