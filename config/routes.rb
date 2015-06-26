@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     resources :comments, :only => [:create]
   end
   resources :blogs, :only => [:show, :index]
+  resources :charges, :only => [:new, :create]
   
   root "posts#index"
 
