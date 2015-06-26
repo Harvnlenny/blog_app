@@ -22,7 +22,6 @@ $(function(){
   $(document).foundation();
 
   $('#new_comment').submit(function(event){
-    console.log('submitted!');
     event.preventDefault();
 
     // Do the ajax
@@ -32,7 +31,7 @@ $(function(){
       data: $(event.target).serialize(),
       success: function(data) {
         $('#comment_list').append(data.comment);
-        $("#comment_list .comment:last").hide().slideDown();
+        $("#comment_list .comment:last").hide().slideDown(); // Fun Animation
       }, 
     
       error: function(e) {
