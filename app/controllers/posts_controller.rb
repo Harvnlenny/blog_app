@@ -15,6 +15,8 @@ class PostsController < ApplicationController
     @comment = Comment.new
   end
 
+  
+
   def create
     @post = Post.create(post_params)
 

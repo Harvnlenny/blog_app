@@ -34,6 +34,7 @@ gem "paperclip", "~> 4.2"
 # gem 'unicorn'
 gem 'puma'
 gem 'dotenv'
+gem 'rollbar', '~> 1.5.3'
 gem 'omniauth-github'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
